@@ -43,7 +43,6 @@ function App() {
       selected?.id === friend.id ? null : friend
     );
     setShowAddFriend(false);
-    // setSelectedFriend(friend);
   }
   function handleSplitBill(value) {
     setFriends((friends) =>
@@ -53,7 +52,7 @@ function App() {
           : friend
       )
     );
-    // console.log(value)
+
     setSelectedFriend(null);
   }
   return (
@@ -73,6 +72,7 @@ function App() {
         <FormSplitBill
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
+          key={selectedFriend.id}
         />
       )}
     </div>
